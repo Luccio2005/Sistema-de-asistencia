@@ -1,0 +1,164 @@
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Sagrados Corazones</title>
+    </head>
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, sans serif;
+        }
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+            border-bottom: 2px solid #ddd;
+        }
+        .logo-container{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-container img{
+            width: 80px;
+            height: auto;
+        }
+        .texto-header h1{
+            margin: 0;
+            color: #6b0015;
+            font-size: 28px;
+        }
+        .texto-header h3{
+            margin: 0;
+            color: #b22222;
+            font-weight: normal;
+            font-size: 18px;
+        }
+        nav ul{
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover{
+            text-decoration: underline;
+            font-weight: bold;
+            color: #6b0015;
+        }
+        .login-btn{
+            background-color: #6b0015;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .login-btn:hover{
+            background-color: #8b1c2d;
+        }
+        .icon{
+            font-size: 18px;
+        }
+        .banner{
+            width: 100%;
+            height: 500px;
+            background-image: url("imagenes/imagenprincipal.png");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .overlay{
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.35);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:flex-start;
+            text-align: left;
+            padding-left: 80px;
+        }
+        .overlay h1{
+            color: #d4a017;
+            font-size: 60px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .overlay p{
+            color: white;
+            font-size: 22px;
+            max-width: 700px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .banner-btn{
+            background-color:#6b0015;
+            color:white;
+            padding:14px 28px;
+            border-radius:30px;
+            text-decoration:none;
+            display:flex;
+            align-items:center;
+            gap:10px;
+            font-size:18px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+        .banner-btn:hover{
+            background-color: #8b1c2d;
+        }
+    </style>
+    <body>
+        <header>
+            <div class="logo-container">
+            <img src="imagenes/sagrados corazones.jpg"
+            alt="Logo"/>
+            <div class="texto-header">
+            <h1>Parroquia Sagrados Corazones</h1>
+            <h3> Iglesia Catolica</h3>
+            </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Noticias</a></li>
+                    <li><a href="#">Horarios</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Galeria</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="login-btn">
+                <span class="icon">👤</span>
+                Iniciar Sesion
+            </a>
+        </header>
+        <section class="banner">
+            <div class="overlay">
+                <h1>Bienvenidos a la Iglesia</h1>
+                <p>"Porque donde están dos o tres congregados en mi nombre, allí estoy yo en medio de ellos."
+            <br>Mateo 18:20
+        </p>
+        <a href="#" class="banner-btn">
+            <span class="icon">👤</span>
+            Iniciar Sesion
+        </a>
+            </div>
+        </section>
+    </body>
+</html>
