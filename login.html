@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Iglesia Sagrados Corazones</title>
+
+    <!-- ICONOS -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            position:relative;
+            overflow-x:hidden;
+
+            /* IMAGEN DE FONDO */
+            background:
+            linear-gradient(rgba(255,255,255,0.90),
+            rgba(255,255,255,0.90)),
+            url("iglesia.jpg");
+
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+            background:
+    linear-gradient(rgba(255,255,255,0.92),
+    rgba(255,255,255,0.92)),
+    url("imagenes/iglesia.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+            
+        }
+
+        :root{
+            --vino:#6d0f1b;
+            --vino-oscuro:#4d0811;
+            --amarillo:#ffd54f;
+            --gris:#f3f3f3;
+        }
+
+        .logo{
+            text-align:center;
+            margin-bottom:25px;
+        }
+
+        .logo img{
+            width:110px;
+            margin-bottom:10px;
+        }
+
+        .logo p{
+            color:var(--vino);
+            font-size:24px;
+            font-weight:500;
+            letter-spacing:1px;
+        }
+
+        .logo h1{
+            color:var(--vino);
+            font-size:55px;
+            letter-spacing:2px;
+            margin-top:5px;
+        }
+
+        /* ================================================= */
+        /* CONTENEDOR PRINCIPAL */
+        /* ================================================= */
+
+        .contenedor{
+            width:1200px;
+            max-width:95%;
+            min-height:700px;
+            background:white;
+            border-radius:40px;
+            overflow:hidden;
+            display:flex;
+            box-shadow:0 15px 40px rgba(0,0,0,0.15);
+            position:relative;
+        }
+
+        /* ================================================= */
+        /* PANEL IZQUIERDO */
+        /* ================================================= */
+
+        .izquierda{
+            width:45%;
+            position:relative;
+            background:
+            linear-gradient(rgba(109,15,27,0.93),
+            rgba(109,15,27,0.93)),
+            url("escrituras.jpg");
+
+            background-size:cover;
+            background-position:center;
+            background-image: url("imagenes/escrituras.jpg");
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:60px;
+            color:white;
+
+            /* DIVISION EN FORMA DE ONDA */
+            clip-path: polygon(
+                0 0,
+                85% 0,
+                100% 15%,
+                93% 35%,
+                100% 55%,
+                92% 75%,
+                100% 100%,
+                0 100%
+            );
+        }
+
+        .contenido-izq h2{
+            color:var(--amarillo);
+            font-size:55px;
+            margin-bottom:10px;
+        }
+
+        .contenido-izq h1{
+            font-size:75px;
+            line-height:1.1;
+            margin-bottom:10px;
+        }
+
+        .contenido-izq h3{
+            font-size:38px;
+            font-weight:300;
+            margin-bottom:70px;
+        }
+
+        .versiculo{
+            font-family:'Great Vibes', cursive;
+            font-size:50px;
+            line-height:1.4;
+        }
+
+        .filipenses{
+            color:var(--amarillo);
+            font-size:25px;
+            margin-top:20px;
+            letter-spacing:2px;
+        }
+
+        /* ================================================= */
+        /* PANEL DERECHO */
+        /* ================================================= */
+
+        .derecha{
+            width:55%;
+            padding:70px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .login{
+            width:100%;
+            max-width:500px;
+        }
+
+        .login h2{
+            text-align:center;
+            margin-bottom:25px;
+            font-size:35px;
+        }
+
+        /* SWITCH */
+
+        .switch{
+            width:100%;
+            height:75px;
+            border-radius:18px;
+            overflow:hidden;
+            display:flex;
+            border:2px solid #ccc;
+            margin-bottom:40px;
+        }
+
+        .opcion{
+            width:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:12px;
+            font-size:24px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .opcion i{
+            font-size:28px;
+        }
+
+        .activo{
+            background:var(--vino);
+            color:white;
+        }
+
+        .inactivo{
+            background:white;
+            color:#333;
+        }
+
+        /* LABELS */
+
+        label{
+            display:block;
+            margin-bottom:10px;
+            margin-top:20px;
+            font-weight:600;
+            font-size:20px;
+        }
+
+        /* INPUTS */
+
+        .input-box{
+            width:100%;
+            height:65px;
+            border:2px solid #d8d8d8;
+            border-radius:15px;
+            display:flex;
+            align-items:center;
+            padding:0 20px;
+            margin-bottom:20px;
+        }
+
+        .input-box i{
+            font-size:22px;
+            color:#666;
+            margin-right:15px;
+        }
+
+        .input-box input{
+            width:100%;
+            border:none;
+            outline:none;
+            font-size:18px;
+        }
+
+        .ojo{
+            cursor:pointer;
+        }
+
+        /* OPCIONES */
+
+        .extras{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:30px;
+            font-size:16px;
+        }
+
+        .recordar{
+            display:flex;
+            align-items:center;
+            gap:8px;
+        }
+
+        .recordar input{
+            width:18px;
+            height:18px;
+        }
+
+        .olvido{
+            color:var(--vino);
+            text-decoration:underline;
+            font-weight:600;
+            cursor:pointer;
+        }
+
+        /* BOTON */
+
+        .btn-login{
+            width:100%;
+            height:65px;
+            border:none;
+            border-radius:40px;
+            background:var(--vino);
+            color:white;
+            font-size:24px;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .btn-login:hover{
+            background:var(--vino-oscuro);
+        }
+
+        .separador{
+            text-align:center;
+            margin:25px 0;
+            font-size:25px;
+        }
+
+        /* GOOGLE */
+
+        .google{
+            width:100%;
+            height:65px;
+            border:2px solid #ddd;
+            border-radius:15px;
+            background:white;
+            font-size:22px;
+            cursor:pointer;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:15px;
+        }
+
+        .google img{
+            width:30px;
+        }
+
+        /* REGISTRO */
+
+        .registro{
+            text-align:center;
+            margin-top:30px;
+            font-size:18px;
+        }
+
+        .registro span{
+            color:var(--vino);
+            text-decoration:underline;
+            font-weight:600;
+            cursor:pointer;
+        }
+
+        /* FOOTER */
+
+        footer{
+            margin-top:30px;
+            margin-bottom:20px;
+            font-size:20px;
+            color:#333;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:1000px){
+
+            .contenedor{
+                flex-direction:column;
+                height:auto;
+            }
+
+            .izquierda,
+            .derecha{
+                width:100%;
+            }
+
+            .izquierda{
+                clip-path:none;
+                padding:50px 30px;
+            }
+
+            .contenido-izq h1{
+                font-size:50px;
+            }
+
+            .contenido-izq h2{
+                font-size:40px;
+            }
+
+            .versiculo{
+                font-size:35px;
+            }
+
+            .logo h1{
+                font-size:38px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- LOGO -->
+    <div class="logo">
+
+        <!-- AQUI PONES TU LOGO -->
+        <img src="imagenes/sagrados corazones.jpg" alt="logo">
+
+        <p>IGLESIA CATOLICA</p>
+
+        <h1>SAGRADOS CORAZONES</h1>
+
+    </div>
+
+    <!-- CONTENEDOR -->
+    <div class="contenedor">
+
+        <!-- IZQUIERDA -->
+        <div class="izquierda">
+
+            <div class="contenido-izq">
+
+                <h2>BIENVENIDO</h2><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+                <div class="versiculo">
+                    “Todo lo puedo en Cristo<br>
+                    que me fortalece”
+                </div>
+
+                <div class="filipenses">
+                    FILIPENSES 4:13
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DERECHA -->
+        <div class="derecha">
+
+            <form class="login" action="" method="POST">
+
+                <h2>SELECCIONA TU ROL</h2>
+
+                <!-- SWITCH -->
+                <div class="switch">
+
+                    <div class="opcion activo" id="alumno">
+
+                        <i class="fa-solid fa-user"></i>
+                        <span>Alumno</span>
+
+                    </div>
+
+                    <div class="opcion inactivo" id="admin">
+
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Administrador</span>
+
+                    </div>
+
+                </div>
+
+                <!-- USUARIO -->
+
+                <label>USUARIO</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input type="text"
+                    placeholder="Ingresa tu usuario">
+
+                </div>
+
+                <!-- PASSWORD -->
+
+                <label>CONTRASEÑA</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input type="password"
+                    id="password"
+                    placeholder="Ingresa tu contraseña">
+
+                    <i class="fa-solid fa-eye ojo"
+                    id="togglePassword"></i>
+
+                </div>
+
+                <!-- OPCIONES -->
+
+                <div class="extras">
+
+                    <div class="recordar">
+
+                        <input type="checkbox">
+
+                        <span>Recordarme</span>
+
+                    </div>
+
+                    <span class="olvido">
+                        ¿Olvidaste tu contraseña?
+                    </span>
+
+                </div>
+
+                <!-- BOTON LOGIN -->
+
+                <button class="btn-login">
+                    INICIAR SESION
+                </button>
+
+                <div class="separador">o</div>
+
+                <!-- GOOGLE -->
+
+                <button type="button" class="google">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png">
+
+                    Continuar con Google
+
+                </button>
+
+                <!-- REGISTRO -->
+
+                <div class="registro">
+
+                    ¿No tienes cuenta?
+                    <span>Consulta con el administrador</span>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Iglesia Sagrados Corazones
+        Todos los Derechos Reservados
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // MOSTRAR / OCULTAR PASSWORD
+
+        const togglePassword =
+        document.getElementById('togglePassword');
+
+        const password =
+        document.getElementById('password');
+
+        togglePassword.addEventListener('click', ()=>{
+
+            const type =
+            password.getAttribute('type') === 'password'
+            ? 'text'
+            : 'password';
+
+            password.setAttribute('type', type);
+
+            togglePassword.classList.toggle('fa-eye');
+            togglePassword.classList.toggle('fa-eye-slash');
+
+        });
+
+        // SWITCH ROLES
+
+        const alumno =
+        document.getElementById('alumno');
+
+        const admin =
+        document.getElementById('admin');
+
+        alumno.addEventListener('click', ()=>{
+
+            alumno.classList.add('activo');
+            alumno.classList.remove('inactivo');
+
+            admin.classList.remove('activo');
+            admin.classList.add('inactivo');
+
+        });
+
+        admin.addEventListener('click', ()=>{
+
+            admin.classList.add('activo');
+            admin.classList.remove('inactivo');
+
+            alumno.classList.remove('activo');
+            alumno.classList.add('inactivo');
+
+        });
+
+    </script>
+
+</body>
+</html>
